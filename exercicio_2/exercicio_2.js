@@ -1,30 +1,18 @@
-class Voto {
-    constructor() {
-        this.totalDeEleitores = 1000
-        this.validos = 800
-        this.votosBrancos = 150
-        this.nulos = 50
-    }
+const vetorDesordenado = [5, 3, 2, 4, 7, 1, 0, 6]
 
-    calculaPercentual(valor){
-        return `${valor / this.totalDeEleitores * 100}%`
+let bubbleSort = (vetor) => {
+    let length = vetor.length
+    for (let i = 0; i < length; i++) {
+        for (let j = 0; j < length; j++){
+            if (vetor[j] > vetor[j + 1]){
+                let temp = vetor[j]
+                vetor[j] = vetor[j + 1]
+                vetor[j + 1] = temp
+            }
+        }
     }
-
-    getVotosValidos() {
-        return 'Votos válidos = '+ this.calculaPercentual(this.validos)
-    }
-
-    getVotosBrancos() {
-        return 'Votos Brancos = '+ this.calculaPercentual(this.votosBrancos) 
-    }
-
-    getVotosNulos() {
-        return 'Votos Nulos = '+ this.calculaPercentual(this.nulos) 
-    }
+    return vetor;
 }
 
-const instanciaVoto = new Voto()
+console.log(bubbleSort(vetorDesordenado))
 
-console.log(instanciaVoto.getVotosValidos())
-console.log(instanciaVoto.getVotosBrancos())
-console.log(instanciaVoto.getVotosNulos())
