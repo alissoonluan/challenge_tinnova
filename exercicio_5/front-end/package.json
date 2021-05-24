@@ -1,0 +1,48 @@
+{
+  "name": "cadastro-de-veiculos",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/pickers": "^3.2.10",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.13.1",
+    "react-loadingg": "^1.7.2",
+    "react-router": "4.3.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-toastify": "^4.4.3",
+    "reactstrap": "^6.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.0",
+    "static-site-generator-webpack-plugin": "^3.4.2",
+    "style-loader": "^2.0.0"
+  }
+}
