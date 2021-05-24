@@ -13,7 +13,7 @@
     <li> Tenha o nodeJs instalado, caso não tenha o download se encontra <a href="https://www.postgresql.org/download/">Aqui</a>
         <li> Tenha o mocha e o sequelize cli para rodar o teste e o migration</a>
     <li><code> npm install mocha -g </code> </li>
-     <li><code> npm install -g sequelize-cl </code> </li>
+     <li><code> npm install -g sequelize-cli </code> </li>
         <h4>Rodar o front-end</h4>
     <li> Na pasta do exercicio5, navegue no front-end e rode npm install e depois npm start </li>
     <li> Não coloquei o .gitignore no .env para vim configurado a url padrão.</li>
