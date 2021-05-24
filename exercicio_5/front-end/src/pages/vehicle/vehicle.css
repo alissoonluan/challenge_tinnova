@@ -3,7 +3,7 @@
   color: #828282;
 }
 
-#controlUser {
+#controlVehicle {
   margin-bottom: 10px;
 }
 
@@ -13,14 +13,4 @@
 
 .textList {
   margin-right: 30px;
-}
-
-.done {
-  color: green;
-  align-items: center;
-}
-
-.close {
-  color: red;
-  align-items: center;
 }

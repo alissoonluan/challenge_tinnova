@@ -14,7 +14,7 @@ import ModalLoading from "../../components/modalLoading/modalLoading";
 import "./vehicle.css";
 
 const EditVehicles = ({ location }) => {
-  const { goBack } = useHistory();
+  const history = useHistory();
   const validateSold = location.state.row.sold === true ? "Sim" : "Nao";
   const [loading, setLoading] = useState(false);
   const [vehicle, setVehicle] = useState(location.state.row.vehicle);
@@ -42,7 +42,8 @@ const EditVehicles = ({ location }) => {
       if (result) {
         notify("Veículo atualizado com sucesso.", true, "info");
 
-        goBack();
+        history.push("/");
+        history.go(0);
       }
     } catch (error) {
       notify("Falha ao editar Veículo.");
@@ -58,11 +59,11 @@ const EditVehicles = ({ location }) => {
         <div className="containerFormUser">
           <div className="wrapper fadeInDown">
             <div id="formContent">
-              <ArrowBackIcon className="iconGoBack" onClick={goBack} />
+              <ArrowBackIcon className="iconGoBack" onClick={history.goBack} />
 
               <label className="title">Editar Veículo</label>
 
-              <FormControl className="formControl" id="controlUser">
+              <FormControl className="formControl" id="controlVehicle">
                 <InputLabel>Veículo*</InputLabel>
                 <Input
                   required
@@ -73,7 +74,7 @@ const EditVehicles = ({ location }) => {
                 />
               </FormControl>
 
-              <FormControl className="formControl" id="controlUser">
+              <FormControl className="formControl" id="controlVehicle">
                 <InputLabel>Descrição*</InputLabel>
                 <Input
                   required
@@ -84,7 +85,7 @@ const EditVehicles = ({ location }) => {
                 />
               </FormControl>
 
-              <FormControl className="formControl" id="controlUser">
+              <FormControl className="formControl" id="controlVehicle">
                 <InputLabel>Ano*</InputLabel>
                 <Input
                   required

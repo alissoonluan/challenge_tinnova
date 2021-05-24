@@ -1,5 +1,5 @@
 const { vehicle } = require("../models/vehicle");
-const axios = require("axios");
+//const axios = require("axios");
 const { Op } = require("sequelize");
 
 // async function validateBrand(brand) {
@@ -133,22 +133,18 @@ const update = async (vehicleReq, res) => {
     const { id } = vehicleReq.params;
     await validateRequiredData(vehicleBody);
 
-    vehicleOri = await vehicle.findByPk(id);
-
-    if (!vehicleOri) throw new Error("Id do veículo inválido!");
-
     const vehicles = {
-      vehicle: vehicleBody.vehicle || vehicleOri.vehicle,
-      brand: vehicleBody.brand || vehicleOri.brand,
-      year: vehicleBody.year || vehicleOri.year,
-      description: vehicleBody.description || vehicleOri.description,
-      sold: vehicleBody.sold == "Sim" ? true : false || vehicleOri.sold,
-      updateAt: new Date(),
+      vehicle: vehicleBody.vehicle,
+      brand: vehicleBody.brand,
+      year: vehicleBody.year,
+      description: vehicleBody.description,
+      sold: vehicleBody.sold == "Sim" ? true : false,
     };
 
     const result = await vehicle.update(vehicles, {
       where: { id: id },
     });
+
     return res.send({ values: result });
   } catch (error) {
     return res.status(400).send(error);

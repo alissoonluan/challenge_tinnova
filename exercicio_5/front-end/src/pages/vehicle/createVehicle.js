@@ -14,7 +14,7 @@ import ModalLoading from "../../components/modalLoading/modalLoading";
 import "./vehicle.css";
 
 const CreateVehicle = () => {
-  const { goBack } = useHistory();
+  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [vehicle, setVehicle] = useState("");
   const [brand, setBrand] = useState("");
@@ -39,7 +39,8 @@ const CreateVehicle = () => {
 
       if (data) {
         notify("Veículo criado com sucesso!", true, "info");
-        goBack();
+        history.push("/");
+        history.go(0);
       }
     } catch (error) {
       notify("Falha ao criar Veículo.");
@@ -55,11 +56,11 @@ const CreateVehicle = () => {
         <div className="containerFormUser">
           <div className="wrapper fadeInDown">
             <div id="formContent">
-              <ArrowBackIcon className="iconGoBack" onClick={goBack} />
+              <ArrowBackIcon className="iconGoBack" onClick={history.goBack} />
 
               <label className="title">Novo Veículo</label>
 
-              <FormControl className="formControl" id="controlUser">
+              <FormControl className="formControl" id="controlVehicle">
                 <InputLabel>Veículo*</InputLabel>
                 <Input
                   required
@@ -70,7 +71,7 @@ const CreateVehicle = () => {
                 />
               </FormControl>
 
-              <FormControl className="formControl" id="controlUser">
+              <FormControl className="formControl" id="controlVehicle">
                 <InputLabel>Descrição*</InputLabel>
                 <Input
                   required
@@ -81,7 +82,7 @@ const CreateVehicle = () => {
                 />
               </FormControl>
 
-              <FormControl className="formControl" id="controlUser">
+              <FormControl className="formControl" id="controlVehicle">
                 <InputLabel>Ano*</InputLabel>
                 <Input
                   required

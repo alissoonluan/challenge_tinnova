@@ -157,7 +157,6 @@ const IndexVehicle = () => {
   const [loading, setLoading] = useState(false);
   const [rowsFilter, setRowsFilter] = useState([]);
   const [filterSelected, setFilterSelected] = useState(null);
-  // const [findByNotSold, setFindByNotSold] = useState([]);
   const [decadeFrom, setDecadeFrom] = useState("");
   const [decadeTo, setDecadeTo] = useState("");
   const [manufacturer, setManufacturer] = useState("");
@@ -356,13 +355,13 @@ const IndexVehicle = () => {
                       required
                       select
                       label="Filtro"
-                      value={filterSelected}
+                      value={filterSelected || ""}
                       onChange={(e) => setFilterSelected(e.target.value)}
                       helperText="Selecione a filtro"
                     >
                       {["Por decada", "Por fabricante", "Ultima semana"].map(
                         (option) => (
-                          <MenuItem key={option} value={option}>
+                          <MenuItem key={option} value={option || ""}>
                             {option}
                           </MenuItem>
                         )
@@ -376,7 +375,7 @@ const IndexVehicle = () => {
                         required
                         select
                         label="Marca"
-                        value={manufacturer}
+                        value={manufacturer || ""}
                         onChange={(e) => setManufacturer(e.target.value)}
                         helperText="Selecione a Marca"
                       >
@@ -388,7 +387,7 @@ const IndexVehicle = () => {
                           "hyundai",
                           "bmw",
                         ].map((option) => (
-                          <MenuItem key={option} value={option}>
+                          <MenuItem key={option} value={option || ""}>
                             {option}
                           </MenuItem>
                         ))}
@@ -402,7 +401,7 @@ const IndexVehicle = () => {
                         required
                         type="number"
                         label="De"
-                        value={decadeFrom}
+                        value={decadeFrom || ""}
                         onChange={(e) => setDecadeFrom(e.target.value)}
                         helperText="Selecione o ano"
                       />
@@ -411,7 +410,7 @@ const IndexVehicle = () => {
                         required
                         type="number"
                         label="Até"
-                        value={decadeTo}
+                        value={decadeTo || ""}
                         onChange={(e) => setDecadeTo(e.target.value)}
                         helperText="Selecione o ano"
                       />
@@ -422,7 +421,7 @@ const IndexVehicle = () => {
                     <FormControlLabel
                       control={
                         <Switch
-                          checked={lastWeek}
+                          checked={lastWeek || ""}
                           onChange={(e) => setLastWeek(e.target.checked)}
                           name="lestWeek"
                           color="primary"
@@ -465,7 +464,7 @@ const IndexVehicle = () => {
                       }}
                       className="title"
                     >
-                      Não vendidos: {notSold} Veículos
+                      Não vendidos: {notSold || ""} Veículos
                     </label>
                   </div>
                 </Box>
@@ -500,9 +499,9 @@ const IndexVehicle = () => {
                           </TableCell>
                           <TableCell align="center">
                             {row.sold === true ? (
-                              <DoneIcon className="done" />
+                              <DoneIcon style={{ color: "Green" }} />
                             ) : (
-                              <CloseIcon className="close" />
+                              <CloseIcon color="error" />
                             )}
                           </TableCell>
                           <TableCell align="center">
