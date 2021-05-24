@@ -10,7 +10,8 @@
 
  <h1>API Desenvolvida cadastro de Veículos</h1>
  <ul>
-    <li> Tenha o nodeJs instalado, caso não tenha o download se encontra <a href="https://www.postgresql.org/download/">Aqui</a>
+    <li> Tenha o nodeJs instalado, caso não tenha o download se encontra <a href="https://nodejs.org/en/download/">Aqui</a>
+        <li> Tenha o Postgres instalado, caso não tenha o download se encontra <a href="https://www.postgresql.org/download/">Aqui</a>
         <li> Tenha o mocha e o sequelize cli para rodar o teste e o migration</a>
     <li><code> npm install mocha -g </code> </li>
      <li><code> npm install -g sequelize-cli </code> </li>
